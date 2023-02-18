@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/drawable/bg_bottom_navigation.xml" value="0.193" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/drawable/bg_gray_border_16dp.xml" value="0.2465" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/drawable/bg_room_type.xml" value="0.2465" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.2465" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2465" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/activity_view_room_type.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/activity_view_rooms.xml" value="0.22" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/fragment_dashboard.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/fragment_home.xml" value="0.18047260451830693" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/fragment_notifications.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/fragment_user.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/layout_action.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/layout_register_button.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/layout_room.xml" value="0.33" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/layout/layout_room_type.xml" value="0.33" />
+        <entry key="..\:/Users/THANHTRUNG/OneDrive - student.ptithcm.edu.vn/Documents/Android/AndroidProject/2023/GiuaKy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

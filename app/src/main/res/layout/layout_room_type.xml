@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_gray_border_16dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_room_type_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_room_type"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_home_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary_color" />
+
+    <TextView
+        android:id="@+id/tv_room_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Basic"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/img_room_type"
+        app:layout_constraintStart_toEndOf="@+id/img_room_type"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_room_type_description"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_room_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_room_type" />
+
+    <TextView
+        android:id="@+id/tv_num_beds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6 beds"
+        app:layout_constraintBottom_toBottomOf="@id/tv_room_type_description"
+        app:layout_constraintLeft_toLeftOf="@id/img_room_type"
+        app:layout_constraintTop_toBottomOf="@+id/img_room_type" />
+
+    <TextView
+        android:id="@+id/tv_price_per_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+        android:text="240.000 đ / month"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_room_type_description"
+        tools:layout_editor_absoluteX="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

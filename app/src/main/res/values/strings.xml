@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GiuaKy</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_user">User</string>
+    <string name="types_of_room">Types of room</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</string>
+    <string name="bills">Bills</string>
+    <string name="register">Register</string>
+    <string name="expand">Expand</string>
+    <string name="actions">Actions</string>
+    <string name="available_rooms">Available rooms</string>
+    <string name="_1_available_bed">1 available bed</string>
+    <string name="_240_000">240.000 đ</string>
+</resources>

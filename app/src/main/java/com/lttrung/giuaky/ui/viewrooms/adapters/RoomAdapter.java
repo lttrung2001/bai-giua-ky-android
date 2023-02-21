@@ -15,32 +15,6 @@ import com.lttrung.giuaky.entities.Room;
 import java.util.List;
 
 public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
-    @Override
-    public void submitList(@Nullable List<Room> list) {
-        super.submitList(list);
-    }
-
-    @Override
-    public void submitList(@Nullable List<Room> list, @Nullable Runnable commitCallback) {
-        super.submitList(list, commitCallback);
-    }
-
-    @Override
-    protected Room getItem(int position) {
-        return super.getItem(position);
-    }
-
-    @Override
-    public int getItemCount() {
-        return super.getItemCount();
-    }
-
-    @NonNull
-    @Override
-    public List<Room> getCurrentList() {
-        return super.getCurrentList();
-    }
-
     public RoomAdapter() {
         super(new DiffUtil.ItemCallback<Room>() {
             @Override
@@ -53,7 +27,6 @@ public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
                 return oldItem.equals(newItem);
             }
         });
-
     }
 
     @NonNull

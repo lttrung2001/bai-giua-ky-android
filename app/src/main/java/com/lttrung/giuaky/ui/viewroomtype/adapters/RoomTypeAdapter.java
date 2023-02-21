@@ -15,38 +15,7 @@ import com.lttrung.giuaky.entities.RoomType;
 import java.util.List;
 
 public class RoomTypeAdapter extends ListAdapter<RoomType, RoomTypeViewHolder> {
-    private OnClickListener listener;
-
-    @Override
-    public void submitList(@Nullable List<RoomType> list) {
-        super.submitList(list);
-    }
-
-    @Override
-    public void submitList(@Nullable List<RoomType> list, @Nullable Runnable commitCallback) {
-        super.submitList(list, commitCallback);
-    }
-
-    @Override
-    protected RoomType getItem(int position) {
-        return super.getItem(position);
-    }
-
-    @Override
-    public int getItemCount() {
-        return super.getItemCount();
-    }
-
-    @NonNull
-    @Override
-    public List<RoomType> getCurrentList() {
-        return super.getCurrentList();
-    }
-
-    @Override
-    public void onCurrentListChanged(@NonNull List<RoomType> previousList, @NonNull List<RoomType> currentList) {
-        super.onCurrentListChanged(previousList, currentList);
-    }
+    private final OnClickListener listener;
 
     public RoomTypeAdapter(OnClickListener listener) {
         super(new DiffUtil.ItemCallback<RoomType>() {

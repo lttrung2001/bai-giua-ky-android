@@ -11,9 +11,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/actions"
         android:textColor="@color/text_color"
-        android:layout_marginBottom="16dp"
         android:textSize="28sp"
         android:textStyle="bold" />
 
@@ -49,16 +49,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lorem"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_register"
             app:layout_constraintTop_toBottomOf="@+id/tv_register" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_forward_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -94,16 +88,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lorem"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_bills"
             app:layout_constraintTop_toBottomOf="@+id/tv_bills" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_forward_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -139,16 +127,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lorem"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_expand"
             app:layout_constraintTop_toBottomOf="@+id/tv_expand" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_forward_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

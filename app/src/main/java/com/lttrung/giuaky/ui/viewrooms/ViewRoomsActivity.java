@@ -27,7 +27,7 @@ public class ViewRoomsActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle(roomType.getName());
 
         adapter = new RoomAdapter();
-        adapter.submitList(roomType.getRooms());
         binding.rcvRooms.setAdapter(adapter);
+        adapter.submitList(roomType.getRooms());
     }
 }

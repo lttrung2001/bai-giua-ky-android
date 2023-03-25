@@ -35,7 +35,7 @@
             app:tint="@color/primary_color" />
 
         <TextView
-            android:id="@+id/tv_register"
+            android:id="@+id/title_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"
@@ -46,13 +46,21 @@
             app:layout_constraintTop_toTopOf="@+id/img_register" />
 
         <TextView
+            android:id="@+id/description_register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lorem"
-            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_register"
-            app:layout_constraintTop_toBottomOf="@+id/tv_register" />
+            app:layout_constraintTop_toBottomOf="@+id/title_register" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_register" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -74,7 +82,7 @@
             app:tint="@color/primary_color" />
 
         <TextView
-            android:id="@+id/tv_bills"
+            android:id="@+id/title_bills"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bills"
@@ -85,13 +93,21 @@
             app:layout_constraintTop_toTopOf="@+id/img_bills" />
 
         <TextView
+            android:id="@+id/description_bills"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lorem"
-            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_bills"
-            app:layout_constraintTop_toBottomOf="@+id/tv_bills" />
+            app:layout_constraintTop_toBottomOf="@+id/title_bills" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_bills" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -113,7 +129,7 @@
             app:tint="@color/primary_color" />
 
         <TextView
-            android:id="@+id/tv_expand"
+            android:id="@+id/title_expand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/expand"
@@ -124,13 +140,21 @@
             app:layout_constraintTop_toTopOf="@+id/img_expand" />
 
         <TextView
+            android:id="@+id/description_expand"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lorem"
-            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_expand"
-            app:layout_constraintTop_toBottomOf="@+id/tv_expand" />
+            app:layout_constraintTop_toBottomOf="@+id/title_expand" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_expand" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

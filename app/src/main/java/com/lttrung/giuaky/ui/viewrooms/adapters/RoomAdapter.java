@@ -5,17 +5,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import com.lttrung.giuaky.R;
 import com.lttrung.giuaky.entities.Room;
 
-import java.util.List;
-
 public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
-    public RoomAdapter() {
+    private ItemListener itemListener;
+
+    public RoomAdapter(ItemListener itemListener) {
         super(new DiffUtil.ItemCallback<Room>() {
             @Override
             public boolean areItemsTheSame(@NonNull Room oldItem, @NonNull Room newItem) {
@@ -27,6 +26,7 @@ public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
                 return oldItem.equals(newItem);
             }
         });
+        this.itemListener = itemListener;
     }
 
     @NonNull
@@ -39,5 +39,10 @@ public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RoomViewHolder holder, int position) {
         holder.bind(getItem(position));
+        holder.itemView.setOnClickListener(v -> itemListener.onClick(getItem(position)));
+    }
+
+    public interface ItemListener {
+        void onClick(Room room);
     }
 }

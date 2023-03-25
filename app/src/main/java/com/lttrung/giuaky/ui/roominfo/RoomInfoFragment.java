@@ -1,4 +1,4 @@
-package com.lttrung.giuaky.ui.dashboard;
+package com.lttrung.giuaky.ui.roominfo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,23 +10,24 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.lttrung.giuaky.databinding.FragmentDashboardBinding;
+import com.lttrung.giuaky.databinding.FragmentRoomInfoBinding;
 
-public class DashboardFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
-    private DashboardViewModel dashboardViewModel;
+public class RoomInfoFragment extends Fragment {
+
+    private FragmentRoomInfoBinding binding;
+    private RoomInfoViewModel roomInfoViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+        roomInfoViewModel = new ViewModelProvider(this).get(RoomInfoViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentRoomInfoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        roomInfoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

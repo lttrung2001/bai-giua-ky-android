@@ -1,39 +1,37 @@
 package com.lttrung.giuaky.ui.viewrooms.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
-import com.lttrung.giuaky.R;
+import com.lttrung.giuaky.databinding.LayoutRoomBinding;
 import com.lttrung.giuaky.entities.Room;
 
-import java.util.List;
-
 public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
-    public RoomAdapter() {
-        super(new DiffUtil.ItemCallback<Room>() {
-            @Override
-            public boolean areItemsTheSame(@NonNull Room oldItem, @NonNull Room newItem) {
-                return oldItem.getId().equals(newItem.getId());
-            }
+    private final static DiffUtil.ItemCallback<Room> ITEM_CALLBACK = new DiffUtil.ItemCallback<Room>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Room oldItem, @NonNull Room newItem) {
+            return oldItem.getId().equals(newItem.getId());
+        }
 
-            @Override
-            public boolean areContentsTheSame(@NonNull Room oldItem, @NonNull Room newItem) {
-                return oldItem.equals(newItem);
-            }
-        });
+        @Override
+        public boolean areContentsTheSame(@NonNull Room oldItem, @NonNull Room newItem) {
+            return oldItem.equals(newItem);
+        }
+    };
+
+    public RoomAdapter() {
+        super(ITEM_CALLBACK);
     }
 
     @NonNull
     @Override
     public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_room, parent, false);
-        return new RoomViewHolder(view);
+        LayoutRoomBinding binding = LayoutRoomBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new RoomViewHolder(binding);
     }
 
     @Override

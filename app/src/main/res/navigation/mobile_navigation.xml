@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.lttrung.giuaky.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_room_info"
+        android:name="com.lttrung.giuaky.ui.roominfo.RoomInfoFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_room_info" />
 
     <fragment
         android:id="@+id/navigation_user"
         android:name="com.lttrung.giuaky.ui.user.UserFragment"
         android:label="@string/title_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/navigation_test"
+        android:name="com.lttrung.giuaky.ui.test.TestFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" />
 </navigation>

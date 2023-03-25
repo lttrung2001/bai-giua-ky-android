@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import com.lttrung.giuaky.R;
+import com.lttrung.giuaky.databinding.LayoutRoomTypeBinding;
 import com.lttrung.giuaky.entities.RoomType;
 
 import java.util.List;
@@ -18,25 +19,15 @@ public class RoomTypeAdapter extends ListAdapter<RoomType, RoomTypeViewHolder> {
     private final OnClickListener listener;
 
     public RoomTypeAdapter(OnClickListener listener) {
-        super(new DiffUtil.ItemCallback<RoomType>() {
-            @Override
-            public boolean areItemsTheSame(@NonNull RoomType oldItem, @NonNull RoomType newItem) {
-                return oldItem.getId().equals(newItem.getId());
-            }
-
-            @Override
-            public boolean areContentsTheSame(@NonNull RoomType oldItem, @NonNull RoomType newItem) {
-                return oldItem.equals(newItem);
-            }
-        });
+        super(ITEM_CALLBACK);
         this.listener = listener;
     }
 
     @NonNull
     @Override
     public RoomTypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_room_type, parent, false);
-        return new RoomTypeViewHolder(view);
+        LayoutRoomTypeBinding binding = LayoutRoomTypeBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new RoomTypeViewHolder(binding);
     }
 
     @Override
@@ -48,4 +39,16 @@ public class RoomTypeAdapter extends ListAdapter<RoomType, RoomTypeViewHolder> {
     public interface OnClickListener {
         void onClick(RoomType roomType);
     }
+
+    private static final DiffUtil.ItemCallback<RoomType> ITEM_CALLBACK = new DiffUtil.ItemCallback<RoomType>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull RoomType oldItem, @NonNull RoomType newItem) {
+            return oldItem.getId().equals(newItem.getId());
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull RoomType oldItem, @NonNull RoomType newItem) {
+            return oldItem.equals(newItem);
+        }
+    };
 }

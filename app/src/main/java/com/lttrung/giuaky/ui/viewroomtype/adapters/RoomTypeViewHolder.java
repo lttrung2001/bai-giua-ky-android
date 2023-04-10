@@ -24,7 +24,7 @@ public class RoomTypeViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(RoomType roomType) {
-        image.setImageResource(R.drawable.ic_home_black_24dp);
+        image.setImageResource(R.drawable.img);
         name.setText(roomType.getName());
         description.setText(roomType.getDescription());
         numOfBeds.setText(String.format(Locale.US, "%d beds", roomType.getNumOfBeds()));

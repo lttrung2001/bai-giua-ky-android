@@ -22,13 +22,19 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/room_img"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img" />
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp">
+
+                <ImageView
+                    android:id="@+id/room_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img" />
+            </androidx.cardview.widget.CardView>
         </FrameLayout>
 
         <TextView
@@ -54,12 +60,13 @@
         <TextView
             android:id="@+id/room_price"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:text="240.000 đ/m"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/room_name"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/room_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/room_name" />
 
         <TextView
             android:id="@+id/room_available_beds"
@@ -68,7 +75,8 @@
             android:text="1 available bed"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/room_beds"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/room_beds" />
 
         <LinearLayout
             android:id="@+id/room_info_container"

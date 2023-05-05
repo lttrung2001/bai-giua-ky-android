@@ -28,23 +28,23 @@
         android:id="@+id/tv_room_type"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Basic"
         android:layout_marginStart="16dp"
+        android:text="Basic"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/img_room_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_room_type_container"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/img_room_type_container" />
 
     <TextView
         android:id="@+id/tv_room_type_description"
-
+        android:ellipsize="end"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:maxLines="3"
         app:layout_constraintStart_toStartOf="@+id/tv_room_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_room_type" />
 

@@ -1,14 +1,13 @@
 package com.lttrung.giuaky.ui.viewrooms.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
-import com.lttrung.giuaky.R;
+import com.lttrung.giuaky.databinding.LayoutRoomBinding;
 import com.lttrung.giuaky.entities.Room;
 
 public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
@@ -32,17 +31,16 @@ public class RoomAdapter extends ListAdapter<Room, RoomViewHolder> {
     @NonNull
     @Override
     public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_room, parent, false);
-        return new RoomViewHolder(view);
+        LayoutRoomBinding viewBinding = LayoutRoomBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new RoomViewHolder(viewBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RoomViewHolder holder, int position) {
-        holder.bind(getItem(position));
-        holder.itemView.setOnClickListener(v -> itemListener.onClick(getItem(position)));
+        holder.bind(getItem(position), itemListener);
     }
 
     public interface ItemListener {
-        void onClick(Room room);
+        void onClick(LayoutRoomBinding viewBinding, Room room);
     }
 }

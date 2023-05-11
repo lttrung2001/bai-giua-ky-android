@@ -9,12 +9,7 @@ import com.lttrung.giuaky.utils.FakeData;
 import java.util.List;
 
 public class ViewRoomTypeViewModel extends ViewModel {
-    protected final MutableLiveData<List<RoomType>> mRoomTypes;
-
-    public ViewRoomTypeViewModel() {
-        super();
-        mRoomTypes = new MutableLiveData<List<RoomType>>();
-    }
+    protected final MutableLiveData<List<RoomType>> mRoomTypes = new MutableLiveData<>();
 
     protected void getRoomTypes() {
         mRoomTypes.postValue(FakeData.getRoomTypeList());

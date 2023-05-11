@@ -15,6 +15,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Number of beds"
+            android:textColor="@color/primary_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/range"
+            style="@style/MyRangeSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:values="@array/rangeSlider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/types_of_room"
             android:textStyle="bold"

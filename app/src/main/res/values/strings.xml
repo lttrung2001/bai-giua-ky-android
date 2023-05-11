@@ -12,4 +12,9 @@
     <string name="available_rooms">Available rooms</string>
     <string name="_1_available_bed">1 available bed</string>
     <string name="_240_000">240.000 đ</string>
+    
+    <string-array name="rangeSlider">
+        <item>0</item>
+        <item>100</item>
+    </string-array>
 </resources>

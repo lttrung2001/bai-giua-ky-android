@@ -29,7 +29,7 @@ public class RegisterRoomActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        finish();
+        supportFinishAfterTransition();
         return true;
     }
 

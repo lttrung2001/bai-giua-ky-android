@@ -2,24 +2,23 @@ package com.lttrung.giuaky.ui.viewroomtype;
 
 import static com.lttrung.giuaky.utils.Constant.ROOM_TYPE;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.material.slider.LabelFormatter;
 import com.lttrung.giuaky.R;
 import com.lttrung.giuaky.databinding.ActivityViewRoomTypeBinding;
 import com.lttrung.giuaky.entities.RoomType;
 import com.lttrung.giuaky.ui.viewrooms.ViewRoomsActivity;
 import com.lttrung.giuaky.ui.viewroomtype.adapters.RoomTypeAdapter;
+import com.lttrung.giuaky.ui.viewroomtype.models.FilterAndSort;
 import com.lttrung.giuaky.utils.FakeData;
 
-import java.text.NumberFormat;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -32,28 +31,47 @@ public class ViewRoomTypeActivity extends AppCompatActivity {
 
     private ViewRoomTypeViewModel viewRoomTypeViewModel;
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         viewRoomTypeViewModel = new ViewModelProvider(this).get(ViewRoomTypeViewModel.class);
+
         viewRoomTypeViewModel.mRoomTypes.observe(this, roomTypes -> {
-                    adapter.submitList(roomTypes);
-                    Optional<RoomType> maxRoomType = roomTypes.stream().max(Comparator.comparingInt(RoomType::getNumOfBeds));
-                    Optional<RoomType> minRoomType = roomTypes.stream().min(Comparator.comparingInt(RoomType::getNumOfBeds));
-                    int min = minRoomType.isPresent() ? minRoomType.get().getNumOfBeds() : 0;
-                    int max = maxRoomType.isPresent() ? maxRoomType.get().getNumOfBeds() : 100;
-                    binding.range.setValueFrom(min);
-                    binding.range.setValueTo(max);
-                    binding.range.setValues((float) min, (float) max);
-                    binding.range.setLabelFormatter((LabelFormatter) value -> (int) value + " beds");
-                    binding.range.addOnChangeListener((slider, value, fromUser) -> {
-                        List<RoomType> filteredTypes = FakeData.getRoomTypeList().stream().filter(roomType -> roomType.getNumOfBeds() >= slider.getValues().get(0) && roomType.getNumOfBeds() <= slider.getValues().get(1)).collect(Collectors.toList());
-                        adapter.submitList(filteredTypes);
-                        Log.i("INFO", slider.getValues().toString());
-                    });
-                }
-        );
+            Optional<RoomType> maxRoomType = roomTypes.stream().max(Comparator.comparingInt(RoomType::getNumOfBeds));
+            Optional<RoomType> minRoomType = roomTypes.stream().min(Comparator.comparingInt(RoomType::getNumOfBeds));
+            int min = minRoomType.isPresent() ? minRoomType.get().getNumOfBeds() : 0;
+            int max = maxRoomType.isPresent() ? maxRoomType.get().getNumOfBeds() : 100;
+
+            viewRoomTypeViewModel.applyFilterAndSort(new FilterAndSort(min, max, List.of(min, max), 0));
+        });
+
+        viewRoomTypeViewModel.mFilterAndSort.observe(this, filterAndSort -> {
+            int min = filterAndSort.getValues().get(0);
+            int max = filterAndSort.getValues().get(1);
+            List<RoomType> filteredTypes = FakeData.getRoomTypeList()
+                    .stream()
+                    .filter(roomType -> roomType.getNumOfBeds() >= min && roomType.getNumOfBeds() <= max)
+                    .collect(Collectors.toList());
+            switch (filterAndSort.getSortPosition()) {
+                case R.id.button1: // Sort by beds asc
+                    filteredTypes.sort(Comparator.comparingInt(RoomType::getNumOfBeds));
+                    break;
+                case R.id.button2: // Sort by beds desc
+                    filteredTypes.sort(Comparator.comparingInt(RoomType::getNumOfBeds).reversed());
+                    break;
+                case R.id.button3: // Sort by name asc
+                    filteredTypes.sort(Comparator.comparing(RoomType::getName));
+                    break;
+                case R.id.button4: // Sort by name desc
+                    filteredTypes.sort(Comparator.comparing(RoomType::getName).reversed());
+                    break;
+                default:
+                    break;
+            }
+            adapter.submitList(filteredTypes);
+        });
 
         binding = ActivityViewRoomTypeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -68,6 +86,11 @@ public class ViewRoomTypeActivity extends AppCompatActivity {
         binding.rcvRoomTypes.setAdapter(adapter);
 
         viewRoomTypeViewModel.getRoomTypes();
+
+        binding.buttonShowFilter.setOnClickListener(v -> {
+            FilterAndSortFragment fragment = new FilterAndSortFragment();
+            fragment.show(getSupportFragmentManager(), FilterAndSortFragment.TAG);
+        });
     }
 
     @Override

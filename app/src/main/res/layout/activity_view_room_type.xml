@@ -15,26 +15,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Number of beds"
-            android:textColor="@color/primary_color"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.slider.RangeSlider
-            android:id="@+id/range"
-            style="@style/MyRangeSlider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:values="@array/rangeSlider" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/types_of_room"
             android:textStyle="bold"
             android:textColor="@color/text_color"
             android:textSize="28sp" />
+
+        <ImageButton
+            android:id="@+id/button_show_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/baseline_filter_list_24"
+            android:contentDescription="Button filter" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_room_types"
